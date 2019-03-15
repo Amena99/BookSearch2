@@ -1,4 +1,22 @@
 .jumbotron {
-  min-height: 300px;
-  padding-top: 100px;
+  height: 300;
+  clear: "both"; 
+  padding-top: 120; 
+  display:flex;
+  text-align: "left"; 
+  font-weight: 500;
+  font-size: 40px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: navy;
+  background-color: aliceblue;
+  /* background-image: url("..../public/assets/images/summer_reading.JPG"); */
+  padding-left: 100px;
+}
+.subtext{
+  font-size: 15px;
+  color: navy;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  align-content: "left"; 
 }

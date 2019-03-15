@@ -1,0 +1,25 @@
+.jumbotron { 
+    height: 300;
+    padding-top: 120; 
+    /* text-align: "center";  */
+    background-color: aliceblue;
+    /* background-image: url("..../public/assets/images/summer_reading.JPG"); */
+    padding-left: 100px;
+    /* display: flex;
+    align-content: flex-start; */
+}
+.main-text{
+        font-weight: 500;
+    font-size: 70px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: navy;
+}
+#subtext{
+    font-size: 20px;
+    color: navy;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.searchforbooksbtn{
+    align-content: flex-start;
+}

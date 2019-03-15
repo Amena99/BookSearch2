@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/JumbotronSearch";
-import Nav from "../components/NavSearch";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import API from "../utils/API";
@@ -50,12 +49,14 @@ class Search extends Component {
       .catch(err => console.log(err));
   }; 
 
-  handleSaveSubmit = ( title, author, synopsis) => {
+  handleSaveSubmit = ( title, author, synopsis, link, image) => {
     
     const newSave = {
       title: title,
       author: author,
-      synopsis: synopsis
+      synopsis: synopsis,
+      link: link,
+      image: image
     }
     console.log(newSave);
     // event.preventDefault();
@@ -63,7 +64,9 @@ class Search extends Component {
       API.saveBook({
         title: newSave.title,
         author: newSave.author,
-        synopsis: newSave.synopsis
+        synopsis: newSave.synopsis,
+        link: link,
+        image: image
       })
         .then(res => console.log("saved!"))
         .catch(err => console.log(err));
@@ -78,7 +81,6 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <Nav />
         <Jumbotron />
         <Container>
           <Row>

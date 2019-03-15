@@ -2,16 +2,18 @@ import React from "react";
 import Thumbnail from "../Thumbnail";
 import { Container, Row, Col } from "../Grid";
 import Button from "../Button";
+// import { Link } from "react-router-dom";
+import DeleteBtn from "../DeleteBtn";
 
 // Exporting both RecipeList and RecipeListItem from this file
 
 // RecipeList renders a bootstrap list item
-export function RecipeList({ children }) {
+export function SavedList({ children }) {
   return <ul className="list-group">{children}</ul>;
 }
 
 // RecipeListItem renders a bootstrap list item containing data from the recipe api call
-export function RecipeListItem(props) {
+export function SavedListItem(props) {
   return (
    
     <li className="list-group-item">
@@ -22,17 +24,14 @@ export function RecipeListItem(props) {
           </Col>
           <Col size="xs-8 sm-9">
             <h3>{props.title}</h3>
-            <h5>{props.subtitle}</h5>
-            <p onChange={props.onChange}>Author: {props.authors}</p>
-            <p>Description: {props.description}</p>
+            
+            <p onChange={props.onChange}>Author(s): {props.authors}</p>
+            <p> {props.description}</p>
             <p><a rel="noreferrer noopener" target="_blank" href={props.link}>
               Learn more about this book!
             </a></p>
-            <Button 
-            onClick={()=>props.handleSaveSubmit(props.title, props.authors, props.description, props.link, props.image)}
-            className={props.className}
-
-            >Save this Book</Button>
+            <DeleteBtn type="danger" onClick={() => props.deleteBook(props.id)}>Remove</DeleteBtn>
+           
           </Col>
         </Row>
       </Container>

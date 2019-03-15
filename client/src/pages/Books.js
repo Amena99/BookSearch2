@@ -1,20 +1,30 @@
 import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
+// import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+// import { List, ListItem } from "../components/List";
+import { SavedList, SavedListItem } from "../components/SavedList";
+
 
 
 class Books extends Component {
-  state = {
-    books: [],
-    title: "",
-    author: "",
-    synopsis: ""
-  };
+  
+  constructor(props){
+    
+    super(props);
+    this.deleteBook = this.deleteBook.bind(this);
+    this.state = {
+      books: [],
+      title: "",
+      author: "",
+      synopsis: ""
+    };
+  }
+  
+  
+  
 
   componentDidMount() {
     this.loadBooks();
@@ -31,7 +41,9 @@ class Books extends Component {
   deleteBook = id => {
     API.deleteBook(id)
       .then(res => this.loadBooks())
+      .then(res => console.log("deleted!"))
       .catch(err => console.log(err));
+      
   };
 
   handleInputChange = event => {
@@ -58,58 +70,34 @@ class Books extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>What Books Should I Read?</h1>
-            </Jumbotron>
-            <form>
-              <Input
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
-              />
-              <FormBtn
-                disabled={!(this.state.author && this.state.title)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Book
-              </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Books On My List</h1>
-            </Jumbotron>
-            {this.state.books.length ? (
-              <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
-                    
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
+          <Col size="md-12 sm-12">
+            <Jumbotron/>
+            
+            {!this.state.books.length ? (
+                <div>
+                  <h1 className="text-center">No Books Saved Yet!</h1>
+                  <h3 className="text-center">Click 'Search for Books' to find some books to save!</h3> 
+                </div>
+              ) : (
+                <SavedList>
+                    {this.state.books.map(book => {
+                    return (
+                      <SavedListItem
+                      key={book._id}
+                      id={book._id}
+                      title={book.title}
+                      // link={book.volumeInfo.infoLink}
+                      authors={book.author ? book.author:""}
+                      description={book.synopsis}
+                      image={book.image ? book.image : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png"}
+                      type="success"
+                      className="input-lg"
+                      deleteBook = {this.deleteBook}
+                      />
+                    ); 
+                    })}
+                </SavedList>
+              )}
           </Col>
         </Row>
       </Container>
