@@ -1,6 +1,7 @@
 import axios from "axios";
-
+console.log("Inside API.js");
 export default {
+
   // Gets all books
   getBooks: function() {
     return axios.get("/api/books");
@@ -16,5 +17,9 @@ export default {
   // Saves a book to the database
   saveBook: function(bookData) {
     return axios.post("/api/books", bookData);
+  },
+  getRecipes: function(query) {
+    
+    return axios.get("/google/",  { params: { q: "title:" + query} });
   }
 };
