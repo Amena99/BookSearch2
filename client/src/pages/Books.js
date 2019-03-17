@@ -90,7 +90,7 @@ class Books extends Component {
                       key={book._id}
                       id={book._id}
                       title={book.title}
-                      // link={book.volumeInfo.infoLink}
+                      link={book.link}
                       authors={book.author ? book.author:""}
                       description={book.synopsis}
                       image={book.image ? book.image : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png"}
