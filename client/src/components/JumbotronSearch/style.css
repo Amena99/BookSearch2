@@ -1,22 +1,30 @@
 .jumbotron {
   height: 300;
-  clear: "both"; 
   padding-top: 120; 
-  display:flex;
-  text-align: "left"; 
-  font-weight: 500;
-  font-size: 40px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: navy;
-  background-color: aliceblue;
-  /* background-image: url("..../public/assets/images/summer_reading.JPG"); */
+  background-image: url(https://i.imgur.com/s5nzvrG.jpg);
+  background-size: cover;
+  background-position: center center;
   padding-left: 100px;
 }
-.subtext{
+.subtext2{
   font-size: 15px;
-  color: navy;
+  /* background: black; */
+  font-weight: bolder;
+  color: beige;
   margin-top: 0;
   margin-bottom: 0;
   display: flex;
   align-content: "left"; 
+  text-shadow: 6px 6px 7px #000000;
+  
+}
+.maintext2{
+  font-size: 40px;
+  font-weight: bolder;
+  color: beige;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  align-content: "left"; 
+  text-shadow: 6px 6px 7px #000000;
 }

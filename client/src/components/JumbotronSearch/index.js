@@ -5,8 +5,8 @@ import "./style.css";
 function Jumbotron() {
   return (
     <div className="jumbotron">
-      Search for the Books You've Waited for..
-      <p class="subtext"> <br/>Powered by GoogleBooksAPI</p>
+      <p class="maintext2">Search for the Books You've Waited for..</p>
+      <p class="subtext2">Powered by GoogleBooksAPI</p>
       
     </div> 
    

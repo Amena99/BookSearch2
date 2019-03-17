@@ -5,15 +5,12 @@ import Button from "../Button";
 function Jumbotron({ children }) {
   return (
     <div className="jumbotron">
+      <div className="container">
       {children}
       <p className="main-text">The Bibliophile's Oasis</p>
-              
-      <p id="subtext"><br/>Search thousands of books.</p>
-              
-      <p id="subtext"><br/>Save your favorites to access or purchase later.</p>
-    
-    
-    <p className="searchforbooksbtn" ><Button type="light" className="info">Search for Books!</Button></p>
+      <p id="subtext">Search thousands of books.<br></br>Save your favorites to access later.</p>
+    <p className="searchforbooksbtn" ><Button type="light" className="info searchbutton">Search for Books!</Button></p>
+      </div> 
     </div>
   );
 }

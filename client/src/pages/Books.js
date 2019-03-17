@@ -68,10 +68,14 @@ class Books extends Component {
 
   render() {
     return (
+    
       <Container fluid>
         <Row>
-          <Col size="md-12 sm-12">
+          <Col size="lg-12 sm-12">
+            <div className="container-full-bg">
             <Jumbotron/>
+            </div>
+            
             
             {!this.state.books.length ? (
                 <div>
@@ -98,9 +102,11 @@ class Books extends Component {
                     })}
                 </SavedList>
               )}
-          </Col>
-        </Row>
-      </Container>
+         
+       
+       </Col>
+      </Row>
+     </Container> 
     );
   }
 }

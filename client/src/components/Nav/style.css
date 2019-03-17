@@ -1,18 +1,18 @@
 .navbar{
-    background-color: aliceblue;
-    color: navy;
+    background-color: 	#D2B48C;
+    color: black;
     display: flex;
     align-content: flex-end;
 
 }
 .navbar-brand1{
-    color: navy;
+    color: black;
     padding-left: 5px;
     padding-right:10px;
  
 }
 .navbar-brand2{
-    color: navy;
+    color: black;
     padding-left: 10px;
    
 }

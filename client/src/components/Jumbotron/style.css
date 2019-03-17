@@ -1,25 +1,38 @@
 .jumbotron { 
     height: 300;
     padding-top: 120; 
-    /* text-align: "center";  */
-    background-color: aliceblue;
-    /* background-image: url("..../public/assets/images/summer_reading.JPG"); */
+    background-image: url(https://i.imgur.com/s5nzvrG.jpg);
+    background-size: cover;
+    background-position: center center;
     padding-left: 100px;
-    /* display: flex;
-    align-content: flex-start; */
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 .main-text{
-        font-weight: 500;
+    
     font-size: 70px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: navy;
+    color: beige;
+    font-weight: 900;
+    /* background: black; */
+    text-shadow: 6px 6px 7px #000000;
 }
 #subtext{
-    font-size: 20px;
-    color: navy;
+    font-size: 22px;
+    font-weight: 900;
+    color:beige;
     margin-top: 0;
     margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0; 
+    margin-top:1px;
+    margin-bottom: 1px;
+    font-weight: 500;
+    /* background: black; */
+    text-shadow: 6px 6px 7px #000000;
 }
 .searchforbooksbtn{
     align-content: flex-start;
+    padding-top: 30px;
 }
