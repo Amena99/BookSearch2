@@ -69,14 +69,14 @@ class Books extends Component {
   render() {
     return (
     
-      <Container fluid>
+      
         <Row>
-          <Col size="lg-12 sm-12">
+          <Col size="md-12 sm-12">
             <div className="container-full-bg">
             <Jumbotron/>
             </div>
             
-            
+          {/* <Container fluid>     */}
             {!this.state.books.length ? (
                 <div>
                   <h1 className="text-center">No Books Saved Yet!</h1>
@@ -102,11 +102,11 @@ class Books extends Component {
                     })}
                 </SavedList>
               )}
-         
+           {/* </Container>   */}
        
        </Col>
       </Row>
-     </Container> 
+  
     );
   }
 }

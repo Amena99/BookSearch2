@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import API from "../utils/API";
 import { RecipeList, RecipeListItem } from "../components/RecipeList";
 import { Container, Row, Col } from "../components/Grid";
+import "./style.css";
 
 class Search extends Component {
   
@@ -83,7 +84,7 @@ class Search extends Component {
       <div>
         <Jumbotron />
         <Container>
-          <Row>
+          <Row id="searchrow">
             <Col size="md-12">
               <form>
                 <Container>
@@ -93,7 +94,7 @@ class Search extends Component {
                         name="recipeSearch"
                         value={this.state.recipeSearch}
                         onChange={this.handleInputChange}
-                        placeholder="Search For a Recipe"
+                        placeholder="book title or author(s)"
                       />
                     </Col>
                     <Col size="xs-3 sm-2">
@@ -113,7 +114,8 @@ class Search extends Component {
           <Row>
             <Col size="xs-12">
               {!this.state.recipes.length ? (
-                <h1 className="text-center">No Recipes to Display</h1>
+                
+              <h3 className="text-center" id="noresultstext">No Results to Display</h3>
               ) : (
                 <RecipeList>
                     {this.state.recipes.map(book => {

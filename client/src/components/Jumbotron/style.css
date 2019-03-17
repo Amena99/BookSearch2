@@ -10,13 +10,12 @@
     margin-right: 0px;
 }
 .main-text{
-    
     font-size: 70px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: beige;
     font-weight: 900;
     /* background: black; */
-    text-shadow: 6px 6px 7px #000000;
+    text-shadow: 4px 4px 5px #000000;
 }
 #subtext{
     font-size: 22px;
@@ -30,7 +29,7 @@
     margin-bottom: 1px;
     font-weight: 500;
     /* background: black; */
-    text-shadow: 6px 6px 7px #000000;
+    text-shadow: 4px 4px 5px #000000;
 }
 .searchforbooksbtn{
     align-content: flex-start;
